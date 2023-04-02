@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_ingame_labels.uss?fileID=7433441132597879392&amp;guid=615a0b5a14aabc0418af3accae96bcf9&amp;type=3#tna_ingame_labels" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="Score: " display-tooltip-when-elided="true" name="Score" class="ingame-label" />
+        <ui:Label text="Time passed: " display-tooltip-when-elided="true" name="Time" />
+        <ui:Label text="Lives left: " display-tooltip-when-elided="true" name="PlayerLives" />
+        <ui:Label text="Level: " display-tooltip-when-elided="true" name="WhichLevel" />
+        <ui:Label text="Soul&apos;s Harvested: " display-tooltip-when-elided="true" name="Reserves" style="height: 18px; width: 107px;" />
+        <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="NumSouls" style="height: 20px; width: 56px; position: relative; translate: 101px -17px;" />
+    </ui:VisualElement>
+</ui:UXML>

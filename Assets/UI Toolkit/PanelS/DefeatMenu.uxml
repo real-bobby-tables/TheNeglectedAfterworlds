@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="height: 641px;">
+        <ui:Button text="RETRY" display-tooltip-when-elided="true" name="RetryButton" style="translate: 460px 322px; height: 66px; width: 435px; font-size: 34px;" />
+        <ui:Label text="YOU LOST!&#10;&#10;TRY AGAIN?" display-tooltip-when-elided="true" name="StyleText" style="height: 183px; width: 270px; font-size: 44px; translate: 554px 49px;" />
+        <ui:Button text="QUIT" display-tooltip-when-elided="true" name="QuitButton" style="translate: 460px 218px; height: 66px; width: 435px; font-size: 34px;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,23 @@
+.button-main-title {
+    border-left-color: rgba(223, 89, 226, 255);
+    border-right-color: rgba(223, 89, 226, 255);
+    border-top-color: rgba(223, 89, 226, 255);
+    border-bottom-color: rgba(223, 89, 226, 255);
+    background-color: rgba(70, 13, 140, 255);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 29px;
+    border-bottom-left-radius: 29px;
+    border-top-right-radius: 29px;
+    border-bottom-right-radius: 29px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-left: 17px;
+    margin-right: 17px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}

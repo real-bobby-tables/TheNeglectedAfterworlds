@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_labels.uss?fileID=7433441132597879392&amp;guid=6d33335e901cddf4cacad79a2880b557&amp;type=3#tna_labels" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_buttons.uss?fileID=7433441132597879392&amp;guid=9caac1a4123920d4eb8cca3a0b2c1ea8&amp;type=3#tna_buttons" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="SideBar" style="flex-direction: column; width: 30%; background-color: rgb(28, 13, 51); justify-content: center;">
+            <ui:Label text="The Neglected Afterworlds" display-tooltip-when-elided="true" class="label-main-title" style="font-size: 22px;" />
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" class="button-main-title" style="border-left-color: rgba(255, 255, 255, 255); border-right-color: rgba(255, 255, 255, 255); border-top-color: rgba(255, 255, 255, 255); border-bottom-color: rgba(255, 255, 255, 255); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 24px; border-bottom-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; background-color: rgba(41, 142, 136, 255);" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" name="Settings" class="button-main-title" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit" class="button-main-title" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

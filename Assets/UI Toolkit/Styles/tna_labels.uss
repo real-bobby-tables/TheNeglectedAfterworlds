@@ -1,0 +1,5 @@
+.label-main-title {
+    background-color: rgba(12, 70, 19, 255);
+    -unity-font-style: bold;
+    font-size: 44px;
+}

@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyManager
+  - Enemy
+  - Mon
+  - MonAttack
+  - EnemyAttack
+  - Projectile
   layers:
   - Default
   - TransparentFX
