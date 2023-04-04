@@ -7,6 +7,7 @@ public class EnemyChaseAction : FSMAction
 {
     public override void Execute(BaseStateMachine stateMachine)
     {
+        /*
         var enemy = stateMachine.gameObject;
 
         var target = stateMachine.GetPlayer();
@@ -15,5 +16,6 @@ public class EnemyChaseAction : FSMAction
         bool shouldFlip = newPosition.x < 0;
         enemy.GetComponent<SpriteRenderer>().flipX = shouldFlip;
         enemy.transform.position = newPosition;
+        */
     }
 }

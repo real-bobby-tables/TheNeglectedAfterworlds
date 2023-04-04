@@ -12,7 +12,7 @@ public class AttackAction : FSMAction
     private bool didAttack = false;
     //private float TimeTillAttack = 1.0f;
 
-
+    /*
     private  IEnumerator Fire(BaseStateMachine stateMachine)
     {
         GameObject projectile = Instantiate(AttackProjectile, stateMachine.gameObject.transform.position + Vector3.down, Quaternion.identity);
@@ -71,6 +71,7 @@ public class AttackAction : FSMAction
         yield return new WaitForSeconds(attackCooldown);
         didAttack = false;
     }
+    */
     public override void Execute(BaseStateMachine stateMachine)
     {
        if (AOEAttackObj != null)
@@ -78,7 +79,7 @@ public class AttackAction : FSMAction
             if (!didAttack)
             {
                 
-                stateMachine.StartCoroutine(CastAOE(stateMachine));
+                //stateMachine.StartCoroutine(CastAOE(stateMachine));
             }
        }
 
@@ -86,7 +87,7 @@ public class AttackAction : FSMAction
        {
             if(!AOEAttackObj)
             {
-                stateMachine.StartCoroutine(Fire(stateMachine));
+                //stateMachine.StartCoroutine(Fire(stateMachine));
             }
        }
 
@@ -94,7 +95,7 @@ public class AttackAction : FSMAction
         {
            if (!didAttack)
             {
-                stateMachine.StartCoroutine(MeleeAttack(stateMachine));
+                //stateMachine.StartCoroutine(MeleeAttack(stateMachine));
             }
         }
     }
