@@ -10,9 +10,9 @@ public class PauseMenuUI : MonoBehaviour
     
   private void Awake()
   {
-      VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-      root.Q<Button>("ResumeButton").clicked += () => ResumeEvent.Invoke();
-      root.Q<Button>("QuitButton").clicked += () => Application.Quit();
+      //VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+      //root.Q<Button>("ResumeButton").clicked += () => ResumeEvent.Invoke();
+      //root.Q<Button>("QuitButton").clicked += () => Application.Quit();
   }
 
 

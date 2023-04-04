@@ -5,6 +5,6 @@ public class DidFindNewTarget : Decision
 {
     public override bool Decide(BaseStateMachine state)
     {
-        
+        return true;
     }
 }

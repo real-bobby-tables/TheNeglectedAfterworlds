@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class LifeSupport : MonoBehaviour
 {
-    private EntityStats stats;
+    //private EntityStats stats;
     private float currentHealth;
 
     private Animator anim;
@@ -23,7 +23,7 @@ public class LifeSupport : MonoBehaviour
 
     public void Reset()
     {
-        stats.ResetStats();
+        //stats.ResetStats();
     }
 
     private bool CanBecomeMon()
@@ -99,6 +99,6 @@ public class LifeSupport : MonoBehaviour
     {
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         em = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
-        stats = GetComponent<EntityStats>();
+        //stats = GetComponent<EntityStats>();
     }
 }

@@ -10,7 +10,7 @@ public class AttackAction : FSMAction
     public GameObject AttackProjectile;
     public float attackCooldown = 2.0f;
     private bool didAttack = false;
-    private float TimeTillAttack = 1.0f;
+    //private float TimeTillAttack = 1.0f;
 
 
     private  IEnumerator Fire(BaseStateMachine stateMachine)
