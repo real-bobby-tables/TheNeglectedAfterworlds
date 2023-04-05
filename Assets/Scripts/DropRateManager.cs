@@ -12,25 +12,36 @@ public class DropRateManager : MonoBehaviour
         public float dropRate;
     }
 
+    PlayerStats stats;
+
+    void Start()
+    {
+        stats = FindObjectOfType<PlayerStats>();
+    }
     public List<Drops> drops;
 
 
+    //TODO: improve this so that drops dont spawn when restarting the level
     void OnDestroy()
     {
-        float rnd = Random.Range(0f, 100f);
-        List<Drops> possibleDrops = new List<Drops>();
-        foreach(Drops rate in drops)
+        if (stats != null && !stats.IsDead())
         {
-            if (rnd <= rate.dropRate)
+            float rnd = Random.Range(0f, 100f);
+            List<Drops> possibleDrops = new List<Drops>();
+            foreach(Drops rate in drops)
             {
-                possibleDrops.Add(rate);
+                if (rnd <= rate.dropRate)
+                {
+                    possibleDrops.Add(rate);
+                }
+            }
+
+            if (possibleDrops.Count > 0)
+            {
+                Drops drop = possibleDrops[Random.Range(0, possibleDrops.Count)];
+                Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
             }
         }
-
-        if (possibleDrops.Count > 0)
-        {
-            Drops drop = possibleDrops[Random.Range(0, possibleDrops.Count)];
-            Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
-        }
+        
     }
 }

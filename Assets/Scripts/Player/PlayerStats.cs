@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    public UnityEvent onPlayerDeath;
+
     public CharacterStats characterData;
     [HideInInspector]
     public float currentHealth;
@@ -134,11 +138,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public bool IsDead()
+    {
+        return currentHealth < 0;
+    }
+
     public void die()
     {
             anim.SetBool("IsDead", true);
             Destroy(this.gameObject, 2);
-            SceneManager.LoadScene(2);
+            onPlayerDeath.Invoke();
     }
 
 
