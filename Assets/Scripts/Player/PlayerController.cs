@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterStats stats;
     private float currentSpeed;
     private float currentDamage;
     private float currentDefense;
@@ -41,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public float ChanceToRes = 0.2f;
 
     private MainGameUI mui = null;
+    PlayerStats stats;
     public GameObject MainUIGameObject;
 
     [HideInInspector]
@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
         if (currentHealth < 0)
         {
             anim.SetBool("IsDead", true);
-            Debug.Log("Player died");
             Destroy(this.gameObject, 2);
             SceneManager.LoadScene(2);
         }
@@ -83,8 +82,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        currentSpeed = stats.MoveSpeed;
-        currentHealth = stats.MaxHealth;
+        currentSpeed = stats.currentMoveSpeed;
+        currentHealth = stats.currentHealth;
         //currentDamage = stats.Damage;
         currentDefense = 0f;
         playerControls = new PlayerInput();
@@ -124,6 +123,7 @@ public class PlayerController : MonoBehaviour
         }
 
         LastHorizontalDir = 1.0f;
+        stats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
