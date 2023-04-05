@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2947048983556742806}
   - component: {fileID: 3437029483865396098}
+  - component: {fileID: 5723831584929968070}
   m_Layer: 0
   m_Name: tf_jungle_tileset_36
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5723831584929968070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552535655842351190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adba0cefd7bf5784dbb736ab05ab8d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Health Potion
+    itemPrefab: {fileID: 5211728517214758888, guid: bd3913dc15b37b6408e51aa1365669ff, type: 3}
+    dropRate: 10

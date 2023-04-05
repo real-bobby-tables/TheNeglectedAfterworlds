@@ -34,13 +34,13 @@ public class EnemyStats : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) >= despwanDistance)
         {
-            ReturnEnemy();
+            //ReturnEnemy();
         }
     }
 
     void ReturnEnemy()
     {
-
+        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 
     public void TakeDamage(float dmg)

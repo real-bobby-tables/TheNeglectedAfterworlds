@@ -15,6 +15,6 @@ public class BallController : WeaponController
         base.Attack();
         GameObject ball = Instantiate(weapon.Prefab);
         ball.transform.position = transform.position;
-        ball.GetComponent<BallBehaviour>().DirectionChecker(pc.LastMoveDir);
+        ball.GetComponent<BallBehaviour>().DirectionChecker(pc.MoveDir);
     }
 }

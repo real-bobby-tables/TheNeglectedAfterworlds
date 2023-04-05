@@ -13,6 +13,13 @@ public class BallBehaviour : ProjectileWeaponBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction * currentSpeed * Time.deltaTime;
+        if (direction != Vector3.zero)
+        {
+            transform.position += direction * currentSpeed * Time.deltaTime;
+        }
+        else {
+            Destroy(gameObject);
+        }
+        
     }
 }

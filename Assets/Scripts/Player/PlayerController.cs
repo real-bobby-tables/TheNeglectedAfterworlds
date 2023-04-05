@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     private CircleCollider2D defensePerimeter;
     private Animator anim;
     private SpriteRenderer sprite;
-    public PlayerInput playerControls;
+    [Header("Input")]
+    PlayerInput playerControls;
 
     private InputAction move;
     private InputAction dash;
@@ -39,20 +40,12 @@ public class PlayerController : MonoBehaviour
 
     public float ChanceToRes = 0.2f;
 
-    private MainGameUI mui = null;
     PlayerStats stats;
-    public GameObject MainUIGameObject;
 
     [HideInInspector]
     private float LastHorizontalDir;
     private float LastVerticalDir;
     private Rigidbody2D rb;
-    
-
-
-
-    #region stuff
-   
 
     public float EnemyRezChance()
     {
@@ -70,60 +63,49 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ActivateDefensePerimeter()
+    void Awake()
     {
-        defensePerimeter.enabled = true;
-    }
-
-    public void DeactivateDefensePerimeter()
-    {
-        defensePerimeter.enabled = false;
-    }
-
-    private void Awake()
-    {
-        currentSpeed = stats.currentMoveSpeed;
-        currentHealth = stats.currentHealth;
-        //currentDamage = stats.Damage;
-        currentDefense = 0f;
+        Debug.Log("In awake");
         playerControls = new PlayerInput();
-        anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
-        defensePerimeter = GetComponent<CircleCollider2D>();
+        if (playerControls == null)
+        {
+            Debug.Log("Input is null for some reason");
+        }
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         move = playerControls.Player.Move;
         move.Enable();
-
+        
         dash = playerControls.Player.Dash;
         dash.Enable();
-
-        fire = playerControls.Player.Fire;
-        fire.Enable();
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
-        move.Disable();
+        Debug.Log("In disable");
+        if (move != null)
+        {
+            Debug.Log("Disabling movement");
+            move.Disable();
+        }
+        else {
+            Debug.Log("Failed to disable movement, it was null");
+        }
         dash.Disable();
-        fire.Disable();
     }
 
-
-
-    #endregion
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        if (MainUIGameObject != null)
-        {
-            mui = MainUIGameObject.GetComponent<MainGameUI>();
-        }
-
-        LastHorizontalDir = 1.0f;
         stats = GetComponent<PlayerStats>();
+        currentDefense = 0f;
+        currentSpeed = stats.currentMoveSpeed;
+        currentHealth = stats.currentHealth;
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        LastHorizontalDir = 1.0f;
     }
 
     // Update is called once per frame
@@ -163,10 +145,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        /*
         if (dash.WasPerformedThisFrame())
         {
             Debug.Log("attempted to dash");
         }
+        */
         rb.velocity = new Vector2(moveDirection.x * currentSpeed, moveDirection.y * currentSpeed);
 
     }

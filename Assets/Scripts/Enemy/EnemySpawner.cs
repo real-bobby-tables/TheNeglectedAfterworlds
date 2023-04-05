@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawner Attributes")]
     float spawnTimer; //timer use to determine when to spawn the next enemy
+    public bool UseRandomPositions;
     public int enemiesAlive;
     public int maxEnemiesAllowed;
     public bool maxEnemiesReached = false;
@@ -97,7 +98,14 @@ public class EnemySpawner : MonoBehaviour
                         maxEnemiesReached = true;
                         return;
                     }
-                    Vector2 spawnPos = player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position;//new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
+                    Vector2 spawnPos;
+                     if (!UseRandomPositions) {
+                      spawnPos = player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position;
+                     }
+                     else 
+                     {
+                        spawnPos = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
+                     }
                     Instantiate(enemyGroup.enemyPrefab, spawnPos, Quaternion.identity);
                     
                     enemyGroup.spawnCount++;

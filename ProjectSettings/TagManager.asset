@@ -10,6 +10,7 @@ TagManager:
   - MonAttack
   - EnemyAttack
   - Projectile
+  - Prop
   layers:
   - Default
   - TransparentFX

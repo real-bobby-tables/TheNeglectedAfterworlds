@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerStats : MonoBehaviour
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
+    Animator anim;
     
     [System.Serializable]
     public class LevelRange
@@ -40,6 +42,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         experienceCap = levelRanges[0].experienceCapIncrease;
     }
 
@@ -113,7 +116,7 @@ public class PlayerStats : MonoBehaviour
             isInvincible = true;
             if (currentHealth <= 0)
             {
-                Debug.Log("Enemy died");
+                Debug.Log("Player died");
                 die();
             }
         }
@@ -133,7 +136,9 @@ public class PlayerStats : MonoBehaviour
 
     public void die()
     {
-        Destroy(gameObject);
+            anim.SetBool("IsDead", true);
+            Destroy(this.gameObject, 2);
+            SceneManager.LoadScene(2);
     }
 
 

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6425580301009465709}
   - component: {fileID: -5843289797914876545}
   - component: {fileID: 5018515422021261660}
+  - component: {fileID: 6412547830922665024}
+  - component: {fileID: 7460625356977575541}
   m_Layer: 0
   m_Name: Enemy_BaseSkeleton
   m_TagString: Enemy
@@ -75,9 +77,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1700982955
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1133604278, guid: 71473025ac134ef44b1661e88c96b2fa, type: 3}
   m_Color: {r: 0.8867924, g: 0.08784264, b: 0.08784264, a: 1}
   m_FlipX: 0
@@ -181,4 +183,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d71b76d3e0b0642b219ab90a1feaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e6267d2241b438d409586b8a4f2e31e0, type: 2}
+--- !u!114 &6412547830922665024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418312188851637468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161c5e25fcae75443be05f58a1ac5309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: e6267d2241b438d409586b8a4f2e31e0, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  despwanDistance: 20
+--- !u!114 &7460625356977575541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418312188851637468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adba0cefd7bf5784dbb736ab05ab8d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Experience Gem
+    itemPrefab: {fileID: 3831865905291836414, guid: 8cdac104f2ec0b14fac282a0a6244768, type: 3}
+    dropRate: 50
+  - name: Health Potion
+    itemPrefab: {fileID: 5211728517214758888, guid: bd3913dc15b37b6408e51aa1365669ff, type: 3}
+    dropRate: 5
