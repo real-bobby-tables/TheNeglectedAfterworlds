@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164369ea64415934ea8993ec5deacb9c, type: 3}
+  m_Name: TryHarvestingSoul
+  m_EditorClassIdentifier: 
+  Action:
+  - {fileID: 11400000, guid: 5fbe4368a2d7f644f8315433389fadbf, type: 2}
+  Transitions:
+  - {fileID: 11400000, guid: b44feac10620b7a4f94ff77fbbf4e30c, type: 2}

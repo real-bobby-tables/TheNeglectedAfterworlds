@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_buttons.uss?fileID=7433441132597879392&amp;guid=9caac1a4123920d4eb8cca3a0b2c1ea8&amp;type=3#tna_buttons" />
+    <ui:VisualElement style="translate: 0 -426px;">
+        <ui:Slider picking-mode="Ignore" label="SFX Volume" value="42" high-value="100" name="SfxVolSlider" style="position: absolute; top: 62px; left: 1px; color: rgb(238, 238, 15); -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=014e5b86a1804434a8335e0e36f5552b&amp;type=2#ThaleahFat_TTF SDF&apos;);" />
+        <ui:Slider picking-mode="Ignore" label="Main Music Volume" value="42" high-value="100" name="VolSlider" style="position: absolute; top: 33px; left: -1px; color: rgb(238, 225, 12); -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=014e5b86a1804434a8335e0e36f5552b&amp;type=2#ThaleahFat_TTF SDF&apos;);" />
+        <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button-main-title" style="top: 324px; left: 11px;" />
+        <ui:Button text="Apply" display-tooltip-when-elided="true" name="ApplyButton" class="button-main-title" style="top: 322px; left: 138px;" />
+    </ui:VisualElement>
+    <ui:Label text="Audio Settings" display-tooltip-when-elided="true" style="color: rgb(246, 255, 0);" />
+</ui:UXML>

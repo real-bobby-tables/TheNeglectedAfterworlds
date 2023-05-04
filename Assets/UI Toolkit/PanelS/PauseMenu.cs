@@ -5,25 +5,43 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 public class PauseMenu : MonoBehaviour
 {
-  [SerializeField] GameObject pauseMenu;
+  //[SerializeField] GameObject pauseMenu;
   private bool didPause = false;
+  VisualElement pauseMenuPanel;
+  PlayerController pc;
+  void Start()
+  {
+    pc = FindObjectOfType<PlayerController>();
+    pauseMenuPanel = GetComponent<UIDocument>().rootVisualElement;
+    pauseMenuPanel.Q<Button>("MainMenuButton").clicked += GoToMainMenu;
+    pauseMenuPanel.Q<Button>("ResumeButton").clicked += Resume;
+    pauseMenuPanel.Q<Button>("QuitButton").clicked += () => Application.Quit();
+    pauseMenuPanel.SetEnabled(false);
+    pauseMenuPanel.visible = false;
+  }
 
   public void Pause()
   {
-    pauseMenu.SetActive(true);
     Time.timeScale = 0f;
+    pauseMenuPanel.SetEnabled(true);
+    pauseMenuPanel.visible = true;
+    didPause = true;
+    pc.DisableMovement();
   }
 
   public void Resume()
   {
-    pauseMenu.SetActive(false);
     Time.timeScale = 1f;
+    pauseMenuPanel.SetEnabled(false);
+    pauseMenuPanel.visible = false;
+    didPause = false;
+    pc.EnableMovement();
   }
 
-  public void Home(int sceneID)
+  public void GoToMainMenu()
   {
     Time.timeScale = 1f;
-    SceneManager.LoadScene(sceneID);
+    SceneManager.LoadScene("MainMenu");
   }
 
 
@@ -34,10 +52,8 @@ public class PauseMenu : MonoBehaviour
       if (didPause)
       {
         Resume();
-        didPause = false;
       }
       else {
-        didPause = true;
         Pause();
       }
     }

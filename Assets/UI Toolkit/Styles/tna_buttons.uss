@@ -1,9 +1,9 @@
 .button-main-title {
-    border-left-color: rgba(223, 89, 226, 255);
-    border-right-color: rgba(223, 89, 226, 255);
-    border-top-color: rgba(223, 89, 226, 255);
-    border-bottom-color: rgba(223, 89, 226, 255);
-    background-color: rgba(70, 13, 140, 255);
+    border-left-color: rgb(223, 89, 226);
+    border-right-color: rgb(223, 89, 226);
+    border-top-color: rgb(223, 89, 226);
+    border-bottom-color: rgb(223, 89, 226);
+    background-color: rgb(70, 13, 140);
     border-left-width: 4px;
     border-right-width: 4px;
     border-top-width: 4px;
@@ -20,4 +20,9 @@
     margin-right: 17px;
     margin-top: 17px;
     margin-bottom: 17px;
+    background-image: url('project://database/Assets/Sprites/UI/GUI.png?fileID=603032241&guid=ecbc48d713a3cb24aaed4dc36f252c5f&type=3#GUI_22');
+    -unity-font: url('project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&guid=585188cdc4600544eb408bee749e4b3a&type=3#ThaleahFat_TTF');
+    -unity-font-style: bold;
+    position: absolute;
+    -unity-font-definition: url('project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&guid=014e5b86a1804434a8335e0e36f5552b&type=2#ThaleahFat_TTF SDF');
 }

@@ -13,6 +13,7 @@ namespace TNA.FSM {
             foreach (var action in Action)
             {
                 action.Execute(machine);
+                //action.FixedExecute(machine);
             }
 
             foreach (var transition in Transitions)

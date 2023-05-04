@@ -7,15 +7,20 @@ public class EnemyChaseAction : FSMAction
 {
     public override void Execute(BaseStateMachine stateMachine)
     {
-        /*
+    
         var enemy = stateMachine.gameObject;
 
         var target = stateMachine.GetPlayer();
-        float moveSpeed = enemy.GetComponent<EntityStats>().attributes.Speed * Time.deltaTime;
+        float moveSpeed = enemy.GetComponent<EnemyStats>().currentMoveSpeed * Time.deltaTime;
         Vector3 newPosition = Vector3.MoveTowards(enemy.transform.position, target.transform.position, moveSpeed);
         bool shouldFlip = newPosition.x < 0;
         enemy.GetComponent<SpriteRenderer>().flipX = shouldFlip;
         enemy.transform.position = newPosition;
-        */
+        
+    }
+
+    public override void FixedExecute(BaseStateMachine stateMachine)
+    {
+       // throw new System.NotImplementedException();
     }
 }

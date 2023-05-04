@@ -137,7 +137,7 @@ public class MapController : MonoBehaviour
     void SpawnChunk()
     {
         int rnd = Random.Range(0, terrainChunks.Count);
-        Debug.Log("Spawning chunk at position: " + noTerrainPosition);
+        //Debug.Log("Spawning chunk at position: " + noTerrainPosition);
         latestChunk = Instantiate(terrainChunks[rnd], noTerrainPosition, Quaternion.identity);
         spawnedChunks.Add(latestChunk);
     }

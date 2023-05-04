@@ -4,13 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyManager
   - Enemy
   - Mon
   - MonAttack
   - EnemyAttack
   - Projectile
   - Prop
+  - PlayerAttack
+  - AllyZone
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

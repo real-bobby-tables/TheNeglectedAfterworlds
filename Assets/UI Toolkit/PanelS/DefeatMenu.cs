@@ -15,10 +15,12 @@ public class DefeatMenu : MonoBehaviour
         root.Q<Button>("RetryButton").clicked += () => SceneManager.LoadScene(0);
         root.Q<Button>("QuitButton").clicked += () => Application.Quit();
         root.visible = false;
+        root.SetEnabled(false);
     }
 
     public void Defeat()
     {
+        root.SetEnabled(true);
         root.visible = true;
         Time.timeScale = 0f;
     }

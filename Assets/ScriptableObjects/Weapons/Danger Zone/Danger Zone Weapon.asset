@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69564da9a4899d4b9fd346ba97227fd, type: 3}
+  m_Name: Danger Zone Weapon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3266989457483541029, guid: 24aab3b00f8538047bd2b35bf445761e, type: 3}
+  damage: 15
+  speed: 0
+  cooldownDuration: 5
+  pierce: 5
+  level: 1
+  nextLevelPrefab: {fileID: 2759308467471922220, guid: 4b05b99d429a71a43ab3282516005081, type: 3}

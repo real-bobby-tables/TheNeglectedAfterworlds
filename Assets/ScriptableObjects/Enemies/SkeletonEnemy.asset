@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a935bb8e2a2864c9a0e47efc7e0b34, type: 3}
   m_Name: SkeletonEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  speed: 10
+  maxHealth: 30
+  speed: 3
   damage: 15

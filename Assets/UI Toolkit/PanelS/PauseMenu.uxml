@@ -1,6 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="height: 643px; color: rgba(46, 9, 60, 255);">
-        <ui:Button text="Quit&#10;" display-tooltip-when-elided="true" name="QuitButton" style="translate: 567px 316px; height: 82px; width: 351px; font-size: 30px;" />
-        <ui:Button text="Resume" display-tooltip-when-elided="true" name="ResumeButton" style="height: 81px; width: 351px; translate: 566px 0; font-size: 30px;" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_buttons.uss?fileID=7433441132597879392&amp;guid=9caac1a4123920d4eb8cca3a0b2c1ea8&amp;type=3#tna_buttons" />
+    <ui:VisualElement style="height: 643px; color: rgb(46, 9, 60);">
+        <ui:Button text="Quit&#10;" display-tooltip-when-elided="true" name="QuitButton" class="button-main-title" style="translate: 567px 316px; height: 82px; width: 351px; font-size: 30px; top: -72px; left: -251px;" />
+        <ui:Button text="Resume" display-tooltip-when-elided="true" name="ResumeButton" class="button-main-title" style="height: 81px; width: 351px; translate: 566px 0; font-size: 30px; top: 18px; left: -249px;" />
+        <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="MainMenuButton" class="button-main-title" style="translate: 567px 316px; height: 82px; width: 351px; font-size: 30px; top: -185px; left: -250px;" />
     </ui:VisualElement>
 </ui:UXML>

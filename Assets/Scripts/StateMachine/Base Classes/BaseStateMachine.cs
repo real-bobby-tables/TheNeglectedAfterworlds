@@ -31,6 +31,11 @@ public class BaseStateMachine : MonoBehaviour
         CurrentState.Execute(this);
     }
 
+    private void FixedUpdate()
+    {
+        CurrentState.FixedExecute(this);
+    }
+
     public new T GetComponent<T>() where T : Component 
     {
         if(_cachedComponents.ContainsKey(typeof(T)))
@@ -51,6 +56,4 @@ public class BaseStateMachine : MonoBehaviour
     {
         return Player;
     }
-
-
 }

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_labels.uss?fileID=7433441132597879392&amp;guid=6d33335e901cddf4cacad79a2880b557&amp;type=3#tna_labels" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_buttons.uss?fileID=7433441132597879392&amp;guid=9caac1a4123920d4eb8cca3a0b2c1ea8&amp;type=3#tna_buttons" />
+    <ui:VisualElement style="translate: 0 -462px;">
+        <ui:Label text="Resolution Settings" display-tooltip-when-elided="true" name="Resolution" class="label-main-title" style="position: absolute; color: rgb(238, 228, 12);" />
+        <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button-main-title" style="translate: 0 0; max-width: 30%; max-height: 30%; min-width: 20%; min-height: 20%; height: 40px; width: 165px; position: absolute; top: 393px; left: -16px;" />
+        <ui:Button text="Apply" display-tooltip-when-elided="true" name="ApplyButton" class="button-main-title" style="translate: 0 0; max-width: 30%; max-height: 30%; min-width: 20%; min-height: 20%; height: 40px; width: 165px; position: absolute; top: 388px; left: 311px;" />
+        <ui:DropdownField label="Resolution" index="-1" name="ResolutionDropdown" style="position: absolute; translate: 0 0; height: 35px; top: 57px; left: 2px; color: rgb(243, 250, 18); right: 874px; -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=014e5b86a1804434a8335e0e36f5552b&amp;type=2#ThaleahFat_TTF SDF&apos;); font-size: 28px;" />
+        <ui:DropdownField label="Screen type:" index="-1" name="ScreenSettingsDropdown" style="position: absolute; translate: 0 0; height: 35px; top: 105px; left: 4px; color: rgb(243, 250, 18); right: 873px; -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=014e5b86a1804434a8335e0e36f5552b&amp;type=2#ThaleahFat_TTF SDF&apos;); font-size: 28px;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -8,11 +8,9 @@ public class IsInAttackRangeDecision : Decision
     public float MaxDistance = 10.0f;
     public override bool Decide(BaseStateMachine state)
     {
-        return true;
-        //var info = state.GetComponent<AttackInfo>();
-        //might have to flip operands
-        //info.LastKnownDir = state.gameObject.transform.position - state.GetPlayer().transform.position;
-        //return Vector3.Distance(state.gameObject.transform.position, state.GetPlayer().transform.position) < MaxDistance;
+       var enemy = state.gameObject;
+       var player = state.GetPlayer();
+       return Vector3.Distance(enemy.transform.position, player.transform.position) < MaxDistance;
     }
 }
 

@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_buttons.uss?fileID=7433441132597879392&amp;guid=9caac1a4123920d4eb8cca3a0b2c1ea8&amp;type=3#tna_buttons" />
     <ui:VisualElement style="height: 641px;">
-        <ui:Button text="RETRY" display-tooltip-when-elided="true" name="RetryButton" style="translate: 460px 322px; height: 66px; width: 435px; font-size: 34px;" />
-        <ui:Label text="YOU LOST!&#10;&#10;TRY AGAIN?" display-tooltip-when-elided="true" name="StyleText" style="height: 183px; width: 270px; font-size: 44px; translate: 554px 49px;" />
-        <ui:Button text="QUIT" display-tooltip-when-elided="true" name="QuitButton" style="translate: 460px 218px; height: 66px; width: 435px; font-size: 34px;" />
+        <ui:Button text="RETRY" display-tooltip-when-elided="true" name="RetryButton" class="button-main-title" style="translate: 460px 322px; height: 66px; width: 435px; font-size: 34px;" />
+        <ui:Button text="QUIT" display-tooltip-when-elided="true" name="QuitButton" class="button-main-title" style="translate: 460px 218px; height: 66px; width: 435px; font-size: 34px;" />
+        <ui:Label text="YOU LOST!&#10;&#10;TRY AGAIN?" display-tooltip-when-elided="true" name="StyleText" style="height: 183px; width: 270px; font-size: 44px; translate: 554px 49px; -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=014e5b86a1804434a8335e0e36f5552b&amp;type=2#ThaleahFat_TTF SDF&apos;); position: absolute; top: -4px; left: 33px;" />
     </ui:VisualElement>
 </ui:UXML>

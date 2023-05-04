@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8410625311025392055}
   - component: {fileID: 4517863436304343165}
   - component: {fileID: -5223002800939476249}
+  - component: {fileID: -5623275460605957453}
+  - component: {fileID: 3959207544785100822}
   m_Layer: 0
   m_Name: tf_jungle_tileset_64
   m_TagString: Prop
@@ -101,3 +103,42 @@ MonoBehaviour:
   - name: Health Potion
     itemPrefab: {fileID: 5211728517214758888, guid: bd3913dc15b37b6408e51aa1365669ff, type: 3}
     dropRate: 10
+--- !u!114 &-5623275460605957453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006674631701504578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889aabcb55e30094b9a0bad65df8efc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+--- !u!61 &3959207544785100822
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006674631701504578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

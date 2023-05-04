@@ -2,11 +2,18 @@
     <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_labels.uss?fileID=7433441132597879392&amp;guid=6d33335e901cddf4cacad79a2880b557&amp;type=3#tna_labels" />
     <Style src="project://database/Assets/UI%20Toolkit/Styles/tna_buttons.uss?fileID=7433441132597879392&amp;guid=9caac1a4123920d4eb8cca3a0b2c1ea8&amp;type=3#tna_buttons" />
     <ui:VisualElement name="Background" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement name="SideBar" style="flex-direction: column; width: 30%; background-color: rgb(28, 13, 51); justify-content: center;">
-            <ui:Label text="The Neglected Afterworlds" display-tooltip-when-elided="true" class="label-main-title" style="font-size: 22px;" />
-            <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" class="button-main-title" style="border-left-color: rgba(255, 255, 255, 255); border-right-color: rgba(255, 255, 255, 255); border-top-color: rgba(255, 255, 255, 255); border-bottom-color: rgba(255, 255, 255, 255); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 24px; border-bottom-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; background-color: rgba(41, 142, 136, 255);" />
-            <ui:Button text="Settings" display-tooltip-when-elided="true" name="Settings" class="button-main-title" />
-            <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit" class="button-main-title" />
+        <ui:VisualElement name="PlayBar" style="flex-direction: column; width: 30%; background-color: rgb(28, 13, 51); justify-content: center;">
+            <ui:Label text="The Neglected Afterworlds" display-tooltip-when-elided="true" class="label-main-title" style="font-size: 22px; position: absolute; top: 111px; left: 16px;" />
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" class="button-main-title" style="border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 24px; border-bottom-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; background-color: rgb(41, 142, 136); top: 149px; left: 93px;" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit" class="button-main-title" style="translate: 0 98px; top: 245px; left: 99px;" />
+            <ui:Button text="Graphics Settings" display-tooltip-when-elided="true" name="GSettings" class="button-main-title" style="top: 278px; left: 59px;" />
+            <ui:Button text="Audio Settings" display-tooltip-when-elided="true" name="ASettings" class="button-main-title" style="translate: 0 -61px; top: 280px; left: 69px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="DifficultyBar" style="flex-direction: column; width: 30%; background-color: rgb(28, 13, 51); justify-content: center; translate: 387px 0; position: relative;">
+            <ui:Label text="Choose your Difficulty" display-tooltip-when-elided="true" class="label-main-title" style="font-size: 22px; background-color: rgb(28, 13, 51); -unity-font-style: bold-and-italic; position: absolute; top: 113px; left: 62px;" />
+            <ui:Button text="Hard Difficulty" display-tooltip-when-elided="true" name="HDButton" class="button-main-title" style="top: 338px; left: 114px;" />
+            <ui:Button text="Normal Difficulty" display-tooltip-when-elided="true" name="NDButton" class="button-main-title" style="top: 267px; left: 103px;" />
+            <ui:Button text="Easy Difficulty" display-tooltip-when-elided="true" name="EDButton" class="button-main-title" style="border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 24px; border-bottom-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; background-color: rgb(74, 26, 128); top: 193px; left: 115px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

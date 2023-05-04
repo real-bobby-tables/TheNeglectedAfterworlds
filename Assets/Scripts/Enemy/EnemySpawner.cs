@@ -106,6 +106,8 @@ public class EnemySpawner : MonoBehaviour
                      {
                         spawnPos = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
                      }
+                    Debug.Log("Spawning enemy " + enemyGroup.enemyPrefab);
+                    Debug.Log("Spawning at location " + spawnPos);
                     Instantiate(enemyGroup.enemyPrefab, spawnPos, Quaternion.identity);
                     
                     enemyGroup.spawnCount++;

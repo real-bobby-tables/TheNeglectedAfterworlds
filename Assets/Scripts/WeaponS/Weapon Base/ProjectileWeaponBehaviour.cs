@@ -12,6 +12,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
    protected float currentSpeed;
    protected float currentCooldownDuration;
    protected float currentPierce;
+   private PlayerStats player;
+   sfxController sfx;
 
    private void Awake()
    {
@@ -19,21 +21,22 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
+        player = FindObjectOfType<PlayerStats>();
+   }
+
+   public float GetCurrentDamage()
+   {
+        return currentDamage *= player.currentMight;
    }
 
    public void DirectionChecker(Vector3 dir)
    {
-    direction = dir;
+        direction = dir;
    }
     protected virtual void Start()
     {
         Destroy(gameObject, destroyAfterSeconds);
-    }
-
-    
-    void Update()
-    {
-        
+        sfx = FindObjectOfType<sfxController>();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
@@ -41,15 +44,21 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats en = col.GetComponent<EnemyStats>();
-            en.TakeDamage(currentDamage);
-            ReducePierce();
+            if (en != null)
+            {
+                en.TakeDamage(GetCurrentDamage());
+                sfx.PlaySFX(SFX.EnemyHurt);
+                ReducePierce();
+            }
+
         }
         
         else if (col.CompareTag("Prop"))
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
+                sfx.PlaySFX(SFX.EnemyHurt);
                 ReducePierce();
             }
         }

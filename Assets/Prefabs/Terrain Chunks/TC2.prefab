@@ -4084,6 +4084,9 @@ MonoBehaviour:
   - {fileID: 1743861953020999494, guid: f7d51413cee55054e83b9cc3a88a4fb6, type: 3}
   - {fileID: 6006674631701504578, guid: c600fae4682e25a48a7907241f6d6000, type: 3}
   - {fileID: 401839918859544356, guid: 6cb3e6de7ad4be040bb78db1d046f581, type: 3}
+  - {fileID: 2538390211215031947, guid: f596baac11de4f0428f079e4697ab0a8, type: 3}
+  - {fileID: 6451278588624025964, guid: 4ade5d517b5ab7b46a15236583dfc415, type: 3}
+  - {fileID: 1725877645523684845, guid: f272fee61c1eb504facb5326f2825c2d, type: 3}
 --- !u!61 &933478750035812441
 BoxCollider2D:
   m_ObjectHideFlags: 0

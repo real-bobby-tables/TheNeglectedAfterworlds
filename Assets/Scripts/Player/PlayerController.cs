@@ -11,9 +11,6 @@ public class PlayerController : MonoBehaviour
     private float currentDefense;
     private float currentHealth;
 
-    private EnemyManager em;
-
-
     private CircleCollider2D defensePerimeter;
     private Animator anim;
     private SpriteRenderer sprite;
@@ -21,10 +18,8 @@ public class PlayerController : MonoBehaviour
     PlayerInput playerControls;
 
     private InputAction move;
-    private InputAction dash;
-    private InputAction fire;
-    private InputAction useItem;
-    private InputAction usePowerup;
+    private InputAction soulRelease;
+    private InputAction useAbility;
     private float fireWaitTime = 0.0f;
     
     private Vector2 moveDirection = Vector2.zero;
@@ -47,6 +42,9 @@ public class PlayerController : MonoBehaviour
     private float LastVerticalDir;
     private Rigidbody2D rb;
 
+    private InventoryManager inventory;
+    bool didUlt = false;
+
     public float EnemyRezChance()
     {
         return ChanceToRes;
@@ -63,9 +61,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void DisableMovement()
+    {
+        move.Disable();
+    }
+
+    public void EnableMovement()
+    {
+        move.Enable();
+    }
+
     void Awake()
     {
-        Debug.Log("In awake");
+    
         playerControls = new PlayerInput();
         if (playerControls == null)
         {
@@ -78,13 +86,16 @@ public class PlayerController : MonoBehaviour
         move = playerControls.Player.Move;
         move.Enable();
         
-        dash = playerControls.Player.Dash;
-        dash.Enable();
+        soulRelease = playerControls.Player.SoulRelease;
+        soulRelease.Enable();
+
+        useAbility = playerControls.Player.UseAbility;
+        useAbility.Enable();
     }
 
     void OnDisable()
     {
-        Debug.Log("In disable");
+        
         if (move != null)
         {
             Debug.Log("Disabling movement");
@@ -93,12 +104,14 @@ public class PlayerController : MonoBehaviour
         else {
             Debug.Log("Failed to disable movement, it was null");
         }
-        dash.Disable();
+        soulRelease.Disable();
+        useAbility.Disable();
     }
 
     void Start()
     {
         stats = GetComponent<PlayerStats>();
+        inventory = stats.GetInventory();
         currentDefense = 0f;
         currentSpeed = stats.currentMoveSpeed;
         currentHealth = stats.currentHealth;
@@ -111,18 +124,50 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = move.ReadValue<Vector2>();
-        if (moveDirection.x != 0)
+        if (!stats.IsDead())
         {
-            LastHorizontalDir = moveDirection.x;
-        }
+            moveDirection = move.ReadValue<Vector2>();
+            if (moveDirection.x != 0)
+            {
+                LastHorizontalDir = moveDirection.x;
+            }
 
-        if (moveDirection.y != 0)
-        {
-            LastVerticalDir = moveDirection.y;
-        }
-        UpdateAnimation(moveDirection);
+            if (moveDirection.y != 0)
+            {
+                LastVerticalDir = moveDirection.y;
+            }
+            UpdateAnimation(moveDirection);
 
+            if (soulRelease.IsPressed())
+            {
+                Debug.Log("Attempted to ult");
+                if (stats.CanUlt())
+                {
+                    Debug.Log("Used Soul Release");
+                    didUlt = true;
+                    StartCoroutine(ResetUltWindow());
+                }
+            }    
+
+            if (useAbility.IsPressed() && !inventory.IsUsingAbility())
+            {
+                if (inventory.HasAbilityItem())
+                {
+                    inventory.UseAbility();
+                }
+            }        
+        }
+    }
+
+    IEnumerator ResetUltWindow()
+    {
+        yield return new WaitForSeconds(4f);
+        didUlt = false;
+    }
+
+    public bool DidUlt()
+    {
+        return didUlt;
     }
 
     private void UpdateAnimation(Vector2 dir)
@@ -145,14 +190,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*
-        if (dash.WasPerformedThisFrame())
-        {
-            Debug.Log("attempted to dash");
-        }
-        */
         rb.velocity = new Vector2(moveDirection.x * currentSpeed, moveDirection.y * currentSpeed);
-
     }
 
 }

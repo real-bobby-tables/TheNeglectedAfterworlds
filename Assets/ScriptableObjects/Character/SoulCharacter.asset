@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoulCharacter
   m_EditorClassIdentifier: 
   startingWeapon: {fileID: 5574681197207599532, guid: a86e5c798dac2ed498540f1f8f43a044, type: 3}
-  maxHealth: 100
+  maxHealth: 1000
   recovery: 2
-  moveSpeed: 15
+  moveSpeed: 5
   might: 5
   projectileSpeed: 10
   magnet: 1.6

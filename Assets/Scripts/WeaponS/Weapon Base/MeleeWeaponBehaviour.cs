@@ -12,13 +12,22 @@ public class MeleeWeaponBehaviour : MonoBehaviour
    protected float currentCooldownDuration;
    protected float currentPierce;
 
+   private PlayerStats player;
+
+
    private void Awake()
    {
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
+        player = FindObjectOfType<PlayerStats>();
    }
+
+    public float GetCurrentDamage()
+    {
+        return currentDamage *= player.currentMight;
+    }
     protected virtual void Start()
     {
         Destroy(gameObject, destroyAfterSeconds);
@@ -29,7 +38,7 @@ public class MeleeWeaponBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats en = col.GetComponent<EnemyStats>();
-            en.TakeDamage(currentDamage);
+            en.TakeDamage(GetCurrentDamage());
             ReducePierce();
         }
 
@@ -37,7 +46,7 @@ public class MeleeWeaponBehaviour : MonoBehaviour
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
                 ReducePierce();
             }
         }

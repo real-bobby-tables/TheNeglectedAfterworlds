@@ -21,9 +21,14 @@ public class DropRateManager : MonoBehaviour
     public List<Drops> drops;
 
 
-    //TODO: improve this so that drops dont spawn when restarting the level
+    
     void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded)
+        {
+            return;
+        }
+        
         if (stats != null && !stats.IsDead())
         {
             float rnd = Random.Range(0f, 100f);
